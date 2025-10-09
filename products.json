@@ -46,5 +46,29 @@
     "name": "Golden Veggie Spring Rolls",
     "price": "$9.36",
     "image": "imgs/spring-roll.png"
+  },
+  { "id": 9,
+    "name": "Panner Tikka",
+    "price": "$2.40",
+    "image": "imgs/panner-tikka.png"
+  },
+  { "id": 10,
+    "name": "Thai Basil Noodles",
+    "price": "$2.16",
+    "image": "imgs/thai-basil-noodles.png"
+  },
+  {
+    "id": 11,
+    "name": "Chocolate Lava Cake",
+    "price": "$1.79",
+    "image": "imgs/chocolate-lava-cake.png"
+  },
+  {
+    "id": 12,
+    "name": "Mango Smoothie",
+    "price":"$1.19",
+    "image": "imgs/mango-smoothie.png"
   }
+
+
 ]

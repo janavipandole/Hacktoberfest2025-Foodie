@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Foodie - Contact Us</title>
+    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="./contactUs.css">
+        <link rel="icon" href="imgs/fabicon.png" type="image/png">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <nav>
+            <div class="logo">Foodie.</div>
+            <ul class="nav-links">
+                <li><a href="./index.html">Home</a></li>
+                <li><a href="./index.html#menu">Menu</a></li>
+                <li><a href="./index.html#menu">Service</a></li>
+                <li><a href="./index.html#menu">About us</a></li>
+                <li><a href="#" class="active">Contact Us</a></li>
+            </ul>
+            <!-- Added Toggle theme button -->
+            <div class="nav-right">
+                <button class="icon-btn theme-toggle" onclick="toggleTheme()" title="Toggle theme">
+                    <div class="theme-icon-wrapper">
+                        <span class="theme-icon sun-icon">
+                            <i class="fa-solid fa-moon"></i>
+                        </span>
+                        <span class="theme-icon moon-icon">
+                            <i class="fa-solid fa-sun"></i>
+                        </span>
+                    </div>
+                </button>
+                <a href="./signup.html" class="sign-in-btn">Sign in →</a>
+            </div>
+            <button class="mobile-menu-btn">☰</button>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <h1>Get in <span class="highlight">Touch</span></h1>
+        <p>Have questions or feedback? We'd love to hear from you. Our team is here to help!</p>
+    </section>
+
+    <!-- Contact Container -->
+    <div class="contact-container">
+        <!-- Contact Information -->
+        <div class="contact-info">
+            <div class="info-card">
+                <div class="info-card-header">
+                    <div class="info-icon">📍</div>
+                    <h3>Visit Us</h3>
+                </div>
+                <p>123 Food Street, Culinary District<br>Nashik, Maharashtra 422001<br>India</p>
+            </div>
+
+            <div class="info-card">
+                <div class="info-card-header">
+                    <div class="info-icon">📞</div>
+                    <h3>Call Us</h3>
+                </div>
+                <p>Customer Service: <a href="tel:+911234567890">+91 12345 67890</a></p>
+                <p>Orders Hotline: <a href="tel:+919876543210">+91 98765 43210</a></p>
+                <p>Available: Mon-Sun, 9:00 AM - 11:00 PM</p>
+            </div>
+
+            <div class="info-card">
+                <div class="info-card-header">
+                    <div class="info-icon">✉️</div>
+                    <h3>Email Us</h3>
+                </div>
+                <p>General Inquiries: <a href="mailto:hello@foodie.com">hello@foodie.com</a></p>
+                <p>Support: <a href="mailto:support@foodie.com">support@foodie.com</a></p>
+                <p>Partnerships: <a href="mailto:partner@foodie.com">partner@foodie.com</a></p>
+            </div>
+
+            <div class="info-card">
+                <div class="info-card-header">
+                    <div class="info-icon">🌐</div>
+                    <h3>Follow Us</h3>
+                </div>
+                <p>Stay connected on social media for updates, offers, and more!</p>
+                <div class="social-links">
+                    <!-- Twitter -->
+                    <a href="https://x.com/JanaviPandole" class="social-btn">🐦</a>
+                    <!-- Github -->
+                    <a href="https://github.com/janavipandole" class="social-btn">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                        </svg>
+                    </a>
+                    <!-- LinkedIn -->
+                    <a href="https://www.linkedin.com/in/janavi-pandole-80a7b2290" class="social-btn">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
+                        </svg>
+                    </a>
+                    <!-- Youtube -->
+                    <a href="https://www.youtube.com/@JanaviPandole" class="social-btn">▶️</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Contact Form -->
+        <div class="contact-form">
+            <div class="form-header">
+                <h2>Send Us a Message</h2>
+                <p>Fill out the form below and we'll get back to you within 24 hours</p>
+            </div>
+
+            <form onsubmit="handleSubmit(event)">
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="firstName">First Name *</label>
+                        <input type="text" id="firstName" placeholder="John" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="lastName">Last Name *</label>
+                        <input type="text" id="lastName" placeholder="Doe" required>
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="email">Email Address *</label>
+                        <input type="email" id="email" placeholder="your@email.com" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="phone">Phone Number</label>
+                        <input type="tel" id="phone" placeholder="+91 12345 67890">
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="subject">Subject *</label>
+                    <select id="subject" required>
+                        <option value="">Select a subject</option>
+                        <option value="general">General Inquiry</option>
+                        <option value="order">Order Issue</option>
+                        <option value="feedback">Feedback</option>
+                        <option value="partnership">Partnership</option>
+                        <option value="complaint">Complaint</option>
+                        <option value="other">Other</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="message">Message *</label>
+                    <textarea id="message" placeholder="Tell us what's on your mind..." required></textarea>
+                </div>
+
+                <button type="submit" class="submit-btn">Send Message</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- FAQ Section -->
+    <section class="faq-section">
+        <div class="faq-header">
+            <h2>Frequently Asked Questions</h2>
+            <p>Quick answers to common questions</p>
+        </div>
+        <div class="faq-grid">
+            <div class="faq-item" onclick="toggleFaq(this)">
+                <div class="faq-question">
+                    What are your delivery hours?
+                    <span class="faq-toggle">+</span>
+                </div>
+                <div class="faq-answer">
+                    We deliver from 9:00 AM to 11:00 PM, seven days a week. Orders placed after 10:30 PM will be delivered the next day.
+                </div>
+            </div>
+
+            <div class="faq-item" onclick="toggleFaq(this)">
+                <div class="faq-question">
+                    How can I track my order?
+                    <span class="faq-toggle">+</span>
+                </div>
+                <div class="faq-answer">
+                    Once your order is confirmed, you'll receive a tracking link via SMS and email. You can also track your order in real-time through our app.
+                </div>
+            </div>
+
+            <div class="faq-item" onclick="toggleFaq(this)">
+                <div class="faq-question">
+                    What payment methods do you accept?
+                    <span class="faq-toggle">+</span>
+                </div>
+                <div class="faq-answer">
+                    We accept all major credit/debit cards, UPI, net banking, digital wallets, and cash on delivery for eligible orders.
+                </div>
+            </div>
+
+            <div class="faq-item" onclick="toggleFaq(this)">
+                <div class="faq-question">
+                    Can I cancel or modify my order?
+                    <span class="faq-toggle">+</span>
+                </div>
+                <div class="faq-answer">
+                    You can cancel or modify your order within 5 minutes of placing it. After that, please contact our support team for assistance.
+                </div>
+            </div>
+        </div>
+    </section>
+  
+<!-- FOOTER -->
+    <footer id="contacts">
+        <div class="footer-container">
+            <div class="flex wrapper gap-4">
+                <div class="footer-wrapper">
+                    <a href="#" class="logo">Foodie.</a>
+                    <p class="mt-one">We will fill your tummy with delicious <br>
+                        food with fast delivery</p>
+                    <div class="media flex gap-2 mt-one">
+                        <a href="https://github.com/janavipandole" class="social-media">
+                            <img src="imgs/GitHub.png" alt="GitHub social icon in footer">
+                        </a>
+                        <a href="https://www.linkedin.com/in/janavi-pandole-80a7b2290" class="social-media linkdin">
+                            <img src="imgs/linkdin.png" alt="LinkedIn social icon in footer">
+                        </a>
+                        <a href="https://www.youtube.com/@JanaviPandole" class="social-media">
+                            <img src="imgs/youtube.png" alt="YouTube social icon in footer">
+                        </a>
+                        <a href="https://x.com/JanaviPandole" class="social-media">
+                            <img src="imgs/twitter.png" alt="Twitter social icon in footer">
+                        </a>
+                    </div>
+                </div>
+
+                <ul class="footer-wrapper">
+                    <li>
+                        <h4>Our Menu</h4>
+                    </li>
+                    <li class="mt-one">
+                        <a href="#" class="footer-link">Special</a>
+                    </li>
+                    <li class="mt-one">
+                        <a href="#" class="footer-link">Popular</a>
+                    </li>
+                    <li class="mt-one">
+                        <a href="#" class="footer-link">Category</a>
+                    </li>
+                </ul>
+
+                <ul class="footer-wrapper">
+                    <li>
+                        <h4>Company</h4>
+                    </li>
+                    <li class="mt-one">
+                        <a href="#" class="footer-link"> Why Foodie</a>
+                    </li>
+                    <li class="mt-one">
+                        <a href="./contactUs.html" class="footer-link"> Partner with us</a>
+                    </li>
+                    <li class="mt-one">
+                        <a href="#" class="footer-link"> About us </a>
+                    </li>
+                    <li class="mt-one">
+                        <a href="./contactUs.html" class="footer-link"> FAQ's</a>
+                    </li>
+                </ul>
+
+                <ul class="footer-wrapper">
+                    <li>
+                        <h4>Support</h4>
+                    </li>
+                    <li class="mt-one">
+                        <a href="./signup.html" class="footer-link">Account</a>
+                    </li>
+                    <li class="mt-one">
+                        <a href="./contactUs.html" class="footer-link"> Support center </a>
+                    </li>
+                    <li class="mt-one">
+                        <a href="./contactUs.html" class="footer-link"> Feedback</a>
+                    </li>
+                    <li class="mt-one">
+                        <a href="./contactUs.html" class="footer-link">Contacts </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+
+    <a href="#home" class="back-to-top" aria-label="Back to top">
+        <i class="fa-solid fa-arrow-up"></i>
+    </a>
+
+    <a href="#home" class="back-to-top" aria-label="Back to top">
+        <i class="fa-solid fa-arrow-up"></i>
+    </a>
+
+    <script>
+        // Theme Toggle Functionality
+        function toggleTheme() {
+            const html = document.documentElement;
+            const currentTheme = html.getAttribute('data-theme');
+            
+            if (currentTheme === 'light') {
+                html.removeAttribute('data-theme');
+                localStorage.setItem('theme', 'dark');
+            } else {
+                html.setAttribute('data-theme', 'light');
+                localStorage.setItem('theme', 'light');
+            }
+        }
+
+        // Load saved theme on page load
+    function loadTheme() 
+    {
+        const savedTheme = localStorage.getItem('theme');
+        
+        if (savedTheme === 'light') {
+            document.documentElement.setAttribute('data-theme', 'light');
+        }
+    }
+
+        // Initialize theme on page load
+        loadTheme();
+
+        function handleSubmit(event) {
+            event.preventDefault();
+            const firstName = document.getElementById('firstName').value;
+            const lastName = document.getElementById('lastName').value;
+            const email = document.getElementById('email').value;
+            
+            alert(`Thank you, ${firstName} ${lastName}! We've received your message and will respond to ${email} within 24 hours.`);
+            
+            // Reset form
+            event.target.reset();
+        }
+
+        function toggleFaq(element) {
+            // Close other FAQs
+            const allFaqs = document.querySelectorAll('.faq-item');
+            allFaqs.forEach(faq => {
+                if (faq !== element && faq.classList.contains('active')) {
+                    faq.classList.remove('active');
+                }
+            });
+            
+            // Toggle current FAQ
+            element.classList.toggle('active');
+        }
+        // Simple dark mode sync
+        if (localStorage.getItem("theme") === "dark") {
+        document.documentElement.setAttribute("data-theme", "dark");
+        document.body.classList.add("dark-mode");
+        }
+
+        // Optional toggle sync if you want button behavior too
+        const themeToggle = document.querySelector(".theme-toggle");
+        if (themeToggle) {
+        themeToggle.addEventListener("click", () => {
+            const currentTheme = document.documentElement.getAttribute("data-theme");
+            const newTheme = currentTheme === "dark" ? "light" : "dark";
+            document.documentElement.setAttribute("data-theme", newTheme);
+            document.body.classList.toggle("dark-mode", newTheme === "dark");
+            localStorage.setItem("theme", newTheme);
+        });
+        }
+    </script>
+    <script src="app.js"></script>
+
+</body>
+</html>

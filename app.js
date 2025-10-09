@@ -76,7 +76,7 @@ themeToggles.forEach(toggle => {
 
 initTheme();
 
-let produtList = [];
+let productList = [];
 let AddProduct = [];
 
 const updateTotalPrice = () => {
@@ -98,7 +98,7 @@ const updateTotalPrice = () => {
 // === Show Cards ===
 const showCards = () => {
     cardList.innerHTML = "";
-    produtList.forEach(product => {
+    productList.forEach(product => {
         const orderCard = document.createElement('div');
         orderCard.classList.add('order-card');
 
@@ -336,7 +336,7 @@ const updateCardDisplay = (productId, quantity) => {
 const resetCardButton = (productId) => {
     const qtySelector = document.querySelector(`.quantity-selector[data-id="${productId}"]`);
     if (qtySelector) {
-        const product = produtList.find(p => p.id === productId);
+        const product = productList.find(p => p.id === productId);
         const orderCard = qtySelector.closest('.order-card');
         const cardAction = orderCard.querySelector('.card-action');
         
@@ -355,14 +355,79 @@ const initApp = () => {
     fetch('products.json').then
         (response => response.json()).then
         (data => {
-            produtList = data;
+            productList = data;
             showCards();
         })
 }
 
 initApp();
 
-// Modal Feature Implement
+const searchInput = document.getElementById('search');
+const priceFilter = document.getElementById('price-filter');
+
+const renderCards = (filteredList) => {
+    cardList.innerHTML = '';
+    filteredList.forEach(product => {
+        const orderCard = document.createElement('div');
+        orderCard.classList.add('order-card');
+        
+        orderCard.innerHTML = `
+            <div class="card-image">
+                <img src="${product.image}" alt="">
+            </div>
+            <h4>${product.name}</h4>
+            <h4 class="price">${product.price}</h4>
+            <div class="card-action">
+                <a href="#" class="btn card-btn" data-id="${product.id}">Add to Cart</a>
+            </div>
+        `;
+
+        // Open modal on card click (but not button)
+        orderCard.addEventListener("click", (e) => {
+            if (!e.target.classList.contains('card-btn') && 
+                !e.target.classList.contains('qty-btn') &&
+                !e.target.closest('.card-action')) {
+                openFoodModal(product);
+            }
+        });
+        
+        // Handle add to cart button
+        const cardBtn = orderCard.querySelector('.card-btn');
+        cardBtn.addEventListener('click', (e) => {
+            e.preventDefault();
+            e.stopPropagation();
+            handleCardButton(product, orderCard);
+        });
+        
+        cardList.appendChild(orderCard);
+    });
+};
+
+// Filter logic
+const applyFilters = () => {
+    const searchTerm = searchInput.value.toLowerCase();
+    const priceOption = priceFilter.value;
+
+    const filtered = productList.filter(product => {
+        const matchesSearch = product.name.toLowerCase().includes(searchTerm);
+
+        const priceValue = parseFloat(product.price.replace('$', ''));
+        let matchesPrice = true;
+
+        if (priceOption === 'low') matchesPrice = priceValue < 10;
+        else if (priceOption === 'mid') matchesPrice = priceValue >= 10 && priceValue <= 20;
+        else if (priceOption === 'high') matchesPrice = priceValue > 20;
+
+        return matchesSearch && matchesPrice;
+    });
+
+    renderCards(filtered);
+};
+
+searchInput.addEventListener('input', applyFilters);
+priceFilter.addEventListener('change', applyFilters);
+
+// Modal Feature Implementation
 const modal = document.getElementById("foodModal");
 const modalImage = document.getElementById("modalImage");
 const modalName = document.getElementById("modalName");
@@ -410,6 +475,7 @@ const findOrderCardById = (productId) => {
     return null;
 }
 
+// Modal close handlers
 modalClose.onclick = () => modal.style.display = "none";
 window.onclick = (e) => { if (e.target === modal) modal.style.display = "none"; };
 document.addEventListener("keydown", e => { if (e.key === "Escape") modal.style.display = "none"; });

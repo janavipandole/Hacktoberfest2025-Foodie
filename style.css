@@ -73,6 +73,8 @@ body {
     background-color: var(--eye-ball);
     color: var(--lead);
     transition: background-color 0.4s ease, color 0.4s ease;
+    padding-top: 15vh; /* to accommodate fixed navbar height */
+    /* Added to prevent content from hiding behind the fixed navbar */
 }
 
 /* Dark mode overrides */
@@ -109,6 +111,7 @@ body.dark-mode {
 
 html {
     scroll-behavior: smooth;
+    scroll-padding-top: 15vh; /* to accommodate fixed navbar height */
 }
 
 body::-webkit-scrollbar {
@@ -184,6 +187,45 @@ img {
 }
 
 /* HEADER STYLING */
+
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: var(--bg-secondary);
+    box-shadow: 0 2px 5px var(--shadow);
+    z-index: 1000;
+}
+
+/* Hover effect for navbar links */
+.navList a {
+    position: relative;
+    color: var(--text-primary);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+/* Add an underline animation */
+.navList a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -5px;
+    width: 0;
+    height: 2px;
+    background-color: var(--gold-finger);
+    transition: width 0.3s ease;
+}
+
+/* On hover — text color + underline animation */
+.navList a:hover {
+    color: var(--gold-finger);
+}
+
+.navList a:hover::after {
+    width: 100%;
+}
 
 .navbar {
     height: 14vh;
@@ -289,7 +331,7 @@ img {
 
 /* SECTION STYLING */
 
-/* HREO SECTION */
+/* HERO SECTION */
 .hero-section {
     min-height: calc(100vh - 14vh);
 }
@@ -560,7 +602,7 @@ h4 {
     font-size: 4.5rem;
 }
 
-/*  SECTION 05 STYLING */
+/* SECTION 05 STYLING */
 
 .input-container {
     width: 40rem;
@@ -749,7 +791,7 @@ input[type="email"]:focus {
     }
 }
 
-/*  Modal Styling */
+/* Modal Styling */
 .modal {
     display: none;
     position: fixed;
@@ -878,4 +920,22 @@ div#card-btn-container {
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+/* Filter Bar Styling */
+.filter-bar {
+    justify-content: center;
+}
+
+#search,
+#price-filter {
+    padding: 0.7rem 1rem;
+    font-size: 1rem;
+    border: 2px solid var(--gold-finger);
+    border-radius: 1rem;
+    outline: none;
+}
+
+#search:focus {
+    box-shadow: 0 0 4px var(--gold-finger);
 }

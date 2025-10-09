@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Foodie - Login & Sign Up</title>
+    <link rel="stylesheet" href="./signUp.css">
+    <!-- Added favicon -->
+    <link rel="icon" href="imgs/fabicon.png" type="image/png">
+
+</head>
+<body>
+     <!-- Back to Home button -->
+    <a href="index.html" class="back-home" aria-label="Back to Home">
+        <span class="icon">←</span>
+        Back to Home
+    </a>
+    <div class="container">
+        <div class="hero-section">
+            <div class="logo">Foodie.</div>
+            <div class="hero-text">
+                We will fill your tummy with delicious food with fast delivery
+            </div>
+            <div class="pizza-icon">🍕</div>
+        </div>
+
+        <div class="form-section">
+            <!-- Login Form -->
+            <div id="loginForm" class="auth-container active">
+                <h2>Welcome Back</h2>
+                <p class="subtitle">Login to your account to continue ordering</p>
+
+                <div class="social-login">
+                    <button class="social-btn">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/>
+                            <path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/>
+                            <path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" fill="#FBBC05"/>
+                            <path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/>
+                        </svg>
+                        Google
+                    </button>
+                </div>
+
+                <div class="divider">
+                    <span>OR</span>
+                </div>
+
+                <form onsubmit="handleLogin(event)">
+                    <div class="form-group">
+                        <label for="loginEmail">Email Address</label>
+                        <input type="email" id="loginEmail" placeholder="your@email.com" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="loginPassword">Password</label>
+                        <div class="password-field">
+                            <input type="password" id="loginPassword" placeholder="Enter your password" required>
+                            <button type="button" class="toggle-password" onclick="togglePassword('loginPassword')">👁️</button>
+                        </div>
+                    </div>
+
+                    <div class="forgot-password">
+                        <a href="#" onclick="alert('Password reset feature coming soon!'); return false;">Forgot Password?</a>
+                    </div>
+
+                    <div class="checkbox-group">
+                        <input type="checkbox" id="rememberMe">
+                        <label for="rememberMe">Remember me</label>
+                    </div>
+
+                    <button type="submit" class="btn">Login</button>
+                </form>
+
+                <div class="switch-form">
+                    Don't have an account? <a onclick="switchForm('signup')">Sign Up</a>
+                </div>
+            </div>
+
+            <!-- Sign Up Form -->
+            <div id="signupForm" class="auth-container">
+                <h2>Create Account</h2>
+                <p class="subtitle">Sign up to start ordering delicious food</p>
+
+                <div class="social-login">
+                    <button class="social-btn">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/>
+                            <path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/>
+                            <path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" fill="#FBBC05"/>
+                            <path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/>
+                        </svg>
+                        Google
+                    </button>
+                </div>
+
+                <div class="divider">
+                    <span>OR</span>
+                </div>
+
+                <form onsubmit="handleSignup(event)">
+                    <div class="form-group">
+                        <label for="signupName">Full Name</label>
+                        <input type="text" id="signupName" placeholder="John Doe" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="signupEmail">Email Address</label>
+                        <input type="email" id="signupEmail" placeholder="your@email.com" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="signupPhone">Phone Number</label>
+                        <input type="tel" id="signupPhone" placeholder="+91 12345 67890" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="signupPassword">Password</label>
+                        <div class="password-field">
+                            <input type="password" id="signupPassword" placeholder="Create a password" required>
+                            <button type="button" class="toggle-password" onclick="togglePassword('signupPassword')">👁️</button>
+                        </div>
+                    </div>
+
+                    <div class="checkbox-group">
+                        <input type="checkbox" id="agreeTerms" required>
+                        <label for="agreeTerms">I agree to the Terms & Conditions</label>
+                    </div>
+
+                    <button type="submit" class="btn">Create Account</button>
+                </form>
+
+                <div class="switch-form">
+                    Already have an account? <a onclick="switchForm('login')">Login</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function switchForm(formType) {
+            const loginForm = document.getElementById('loginForm');
+            const signupForm = document.getElementById('signupForm');
+
+            if (formType === 'login') {
+                signupForm.classList.remove('active');
+                loginForm.classList.add('active');
+            } else {
+                loginForm.classList.remove('active');
+                signupForm.classList.add('active');
+            }
+        }
+
+        function togglePassword(inputId) {
+            const input = document.getElementById(inputId);
+            const button = input.nextElementSibling;
+            
+            if (input.type === 'password')
+            {
+                input.type = 'text';
+                button.textContent = '🙈';
+            } 
+            
+            else 
+            {
+                input.type = 'password';
+                button.textContent = '👁️';
+            }
+        }
+
+        function handleLogin(event)
+        {
+            event.preventDefault();
+            const email = document.getElementById('loginEmail').value;
+            alert(`Welcome back! Logging in with: ${email}`);
+            // Add login logic here 
+        }
+
+        function handleSignup(event)
+        {
+            event.preventDefault();
+            const name = document.getElementById('signupName').value;
+            const email = document.getElementById('signupEmail').value;
+            alert(`Account created successfully for: ${name} (${email})`);
+            //Add signin logic here
+        }
+    </script>
+</body>
+</html>
