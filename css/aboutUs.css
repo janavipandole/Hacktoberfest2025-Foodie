@@ -144,7 +144,7 @@ header {
     top: 0;
     left: 0;
     width: 100%;
-    background-color: var(--bg-secondary);
+    background-color: var(--bg-accent);
     /* box-shadow: 0 2px 5px var(--shadow); */
     z-index: 1000;
     transition: background-color 0.5s cubic-bezier(0.4, 0, 0.2, 1);

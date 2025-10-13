@@ -69,12 +69,11 @@ body {
 
 /* Header & Nav */
 header {
-    background: var(--bg-secondary);
     padding: 25px 0;
     position: sticky;
     top: 0;
     z-index: 1000;
-    /* box-shadow: 0 2px 12px var(--shadow); */
+    background-color: var(--bg-accent);
     transition: background-color 0.3s ease, box-shadow 0.3s ease;
 }
 

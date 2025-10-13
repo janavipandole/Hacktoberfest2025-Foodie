@@ -6,8 +6,9 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Foodie - Contact Us</title>
-    <link rel="stylesheet" href="../CSS/style.css">
-    <link rel="stylesheet" href="../CSS/contactUs.css">
+     <link rel="icon" href="../imgs/fabicon.png" type="image/png" />
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/contactUs.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css"
         integrity="sha512-DxV+EoADOkOygM4IR9yXP8Sb2qwgidEmeqAEmDKIOfPRQZOWbXCzLC6vjbZyy0vPisbH2SyW27+ddLVCN+OMzQ=="
         crossorigin="anonymous" referrerpolicy="no-referrer">
@@ -331,108 +332,108 @@
 
 
 
-<script>
-document.addEventListener("DOMContentLoaded", () => {
-    const html = document.documentElement;
-    const themeToggles = document.querySelectorAll('.theme-toggle');
-    const mobileMenuBtn = document.querySelector(".hamberger");
-    const mobileMenu = document.querySelector(".mobile-menu");
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const html = document.documentElement;
+            const themeToggles = document.querySelectorAll('.theme-toggle');
+            const mobileMenuBtn = document.querySelector(".hamberger");
+            const mobileMenu = document.querySelector(".mobile-menu");
 
-    // Load saved theme
-    const savedTheme = localStorage.getItem('theme') || 'light';
-    html.setAttribute('data-theme', savedTheme);
+            // Load saved theme
+            const savedTheme = localStorage.getItem('theme') || 'light';
+            html.setAttribute('data-theme', savedTheme);
 
-    // Update ALL theme toggle icons
-    function updateThemeIcon() {
-        themeToggles.forEach(toggle => {
-            const icon = toggle.querySelector('i');
-            if (html.getAttribute('data-theme') === 'dark') {
-                icon.style.transform = 'rotate(360deg) scale(0)';
-                setTimeout(() => {
-                    icon.className = 'fa-solid fa-sun';
-                    icon.style.transform = 'rotate(0deg) scale(1)';
-                }, 250);
-            } else {
-                icon.style.transform = 'rotate(-360deg) scale(0)';
-                setTimeout(() => {
-                    icon.className = 'fa-solid fa-moon';
-                    icon.style.transform = 'rotate(0deg) scale(1)';
-                }, 250);
+            // Update ALL theme toggle icons
+            function updateThemeIcon() {
+                themeToggles.forEach(toggle => {
+                    const icon = toggle.querySelector('i');
+                    if (html.getAttribute('data-theme') === 'dark') {
+                        icon.style.transform = 'rotate(360deg) scale(0)';
+                        setTimeout(() => {
+                            icon.className = 'fa-solid fa-sun';
+                            icon.style.transform = 'rotate(0deg) scale(1)';
+                        }, 250);
+                    } else {
+                        icon.style.transform = 'rotate(-360deg) scale(0)';
+                        setTimeout(() => {
+                            icon.className = 'fa-solid fa-moon';
+                            icon.style.transform = 'rotate(0deg) scale(1)';
+                        }, 250);
+                    }
+                });
             }
-        });
-    }
 
-    updateThemeIcon();
-
-    // Add event listener to ALL theme toggles
-    themeToggles.forEach(toggle => {
-        toggle.addEventListener('click', () => {
-            const currentTheme = html.getAttribute('data-theme');
-            const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
-            html.setAttribute('data-theme', newTheme);
-            localStorage.setItem('theme', newTheme);
             updateThemeIcon();
+
+            // Add event listener to ALL theme toggles
+            themeToggles.forEach(toggle => {
+                toggle.addEventListener('click', () => {
+                    const currentTheme = html.getAttribute('data-theme');
+                    const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+                    html.setAttribute('data-theme', newTheme);
+                    localStorage.setItem('theme', newTheme);
+                    updateThemeIcon();
+                });
+            });
+
+            // Mobile menu toggle
+            mobileMenuBtn.addEventListener("click", (e) => {
+                e.preventDefault();
+                mobileMenu.classList.toggle("mobile-menu-active");
+                const icon = mobileMenuBtn.querySelector("i");
+                icon.classList.toggle("fa-bars");
+                icon.classList.toggle("fa-xmark");
+            });
+
+            // Close mobile menu when clicking outside
+            document.addEventListener("click", (e) => {
+                if (!mobileMenuBtn.contains(e.target) && !mobileMenu.contains(e.target)) {
+                    mobileMenu.classList.remove("mobile-menu-active");
+                    const icon = mobileMenuBtn.querySelector("i");
+                    icon.classList.add("fa-bars");
+                    icon.classList.remove("fa-xmark");
+                }
+            });
         });
-    });
 
-    // Mobile menu toggle
-    mobileMenuBtn.addEventListener("click", (e) => {
-        e.preventDefault();
-        mobileMenu.classList.toggle("mobile-menu-active");
-        const icon = mobileMenuBtn.querySelector("i");
-        icon.classList.toggle("fa-bars");
-        icon.classList.toggle("fa-xmark");
-    });
-
-    // Close mobile menu when clicking outside
-    document.addEventListener("click", (e) => {
-        if (!mobileMenuBtn.contains(e.target) && !mobileMenu.contains(e.target)) {
-            mobileMenu.classList.remove("mobile-menu-active");
-            const icon = mobileMenuBtn.querySelector("i");
-            icon.classList.add("fa-bars");
-            icon.classList.remove("fa-xmark");
+        // Contact form submit
+        function handleSubmit(event) {
+            event.preventDefault();
+            const firstName = document.getElementById('firstName').value;
+            const lastName = document.getElementById('lastName').value;
+            const email = document.getElementById('email').value;
+            alert(`Thank you, ${firstName} ${lastName}! We've received your message and will respond to ${email} within 24 hours.`);
+            event.target.reset();
         }
-    });
-});
 
-// Contact form submit
-function handleSubmit(event) {
-    event.preventDefault();
-    const firstName = document.getElementById('firstName').value;
-    const lastName = document.getElementById('lastName').value;
-    const email = document.getElementById('email').value;
-    alert(`Thank you, ${firstName} ${lastName}! We've received your message and will respond to ${email} within 24 hours.`);
-    event.target.reset();
-}
-
-// FAQ toggle
-function toggleFaq(element) {
-    const allFaqs = document.querySelectorAll('.faq-item');
-    allFaqs.forEach(faq => {
-        if (faq !== element && faq.classList.contains('active')) {
-            faq.classList.remove('active');
+        // FAQ toggle
+        function toggleFaq(element) {
+            const allFaqs = document.querySelectorAll('.faq-item');
+            allFaqs.forEach(faq => {
+                if (faq !== element && faq.classList.contains('active')) {
+                    faq.classList.remove('active');
+                }
+            });
+            element.classList.toggle('active');
         }
-    });
-    element.classList.toggle('active');
-}
 
-// Back to top button
-const backToTop = document.querySelector('.back-to-top');
-if (backToTop) {
-    window.addEventListener('scroll', () => {
-        if (window.scrollY > 400) {
-            backToTop.classList.add('visible');
-        } else {
-            backToTop.classList.remove('visible');
+        // Back to top button
+        const backToTop = document.querySelector('.back-to-top');
+        if (backToTop) {
+            window.addEventListener('scroll', () => {
+                if (window.scrollY > 400) {
+                    backToTop.classList.add('visible');
+                } else {
+                    backToTop.classList.remove('visible');
+                }
+            });
+            backToTop.addEventListener('click', (e) => {
+                e.preventDefault();
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            });
         }
-    });
-    backToTop.addEventListener('click', (e) => {
-        e.preventDefault();
-        window.scrollTo({ top: 0, behavior: 'smooth' });
-    });
-}
-</script>
-<script src="../JS/app.js"></script>
+    </script>
+    <script src="../JS/app.js"></script>
     <script src="../JS/app.js"></script>
 
 

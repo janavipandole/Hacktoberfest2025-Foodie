@@ -5,7 +5,7 @@
     max-width: 1400px;
     margin: 0 auto;
     padding: 2rem 1.5rem;
-    margin-top: 14vh; /* Match navbar height */
+    /* Match navbar height */
 }
 
 .checkout-container h1 {

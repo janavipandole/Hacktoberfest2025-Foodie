@@ -193,7 +193,7 @@ header {
     top: 0;
     left: 0;
     width: 100%;
-    background-color: #fcf1cc;
+    background-color: var(--bg-accent);
     box-shadow: none;
     z-index: 1000;
     transition: background-color 0.3s ease, box-shadow 0.3s ease;
@@ -362,7 +362,7 @@ header .navbar.wrapper {
 /* HERO SECTION */
 .hero-section {
     min-height: calc(100vh - 14vh);
-    margin-top: 14vh;
+    margin-top: 1vh;
 }
 
 h1 {
