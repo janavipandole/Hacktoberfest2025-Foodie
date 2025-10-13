@@ -193,7 +193,7 @@ header {
     top: 0;
     left: 0;
     width: 100%;
-    background-color: transparent;
+    background-color: #fcf1cc;
     box-shadow: none;
     z-index: 1000;
     transition: background-color 0.3s ease, box-shadow 0.3s ease;
