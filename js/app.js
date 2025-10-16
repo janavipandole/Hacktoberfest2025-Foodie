@@ -183,12 +183,14 @@ checkoutBtn?.addEventListener('click', e => {
     }));
 
     sessionStorage.setItem('checkoutCart', JSON.stringify(checkoutData));
-    window.location.href = '../HTML/checkout.html';
+    window.location.href = '../html/checkout.html';
 });
 
-// ===== RENDER PRODUCT CARDS =====
+// ===== RENDER PRODUCT CARDS (MODIFIED) =====
 const showCards = list => {
+    if (!cardList) return; // Prevent errors if cardList element doesn't exist on the page
     cardList.innerHTML = '';
+    
     if (!list || list.length === 0) {
         const msg = document.createElement('div');
         msg.classList.add('no-items-message');
@@ -198,22 +200,29 @@ const showCards = list => {
     }
 
     list.forEach(product => {
-        const card = document.createElement('div');
-        card.classList.add('order-card');
-        card.innerHTML = `
-            <div class="card-image"><img src="${product.image}" alt="${product.name}"></div>
-            <h4>${product.name}</h4>
-            <h4 class="price">₹${parseFloat(product.price.replace(/[₹$]/g, '')).toFixed(2)}</h4>
-            <a href="#" class="btn card-btn">Add to Cart</a>
+        const cardLink = document.createElement('a');
+        cardLink.href = `../html/item-detail.html?id=${product.id}`;
+        cardLink.classList.add('order-card-link'); // Wrapper class for styling if needed
+        cardLink.style.textDecoration = 'none'; // Remove underline from link
+        cardLink.style.color = 'inherit';
+
+        cardLink.innerHTML = `
+            <div class="order-card">
+                <div class="card-image"><img src="${product.image}" alt="${product.name}"></div>
+                <h4>${product.name}</h4>
+                <h4 class="price">₹${parseFloat(product.price.replace(/[₹$]/g, '')).toFixed(2)}</h4>
+                <div class="btn card-btn">Add to Cart</div>
+            </div>
         `;
-        card.addEventListener('click', e => {
-            if (!e.target.classList.contains('card-btn')) openFoodModal(product);
-        });
-        card.querySelector('.card-btn').addEventListener('click', e => {
-            e.preventDefault();
+
+        // Add event listener ONLY for the "Add to Cart" button
+        cardLink.querySelector('.card-btn').addEventListener('click', e => {
+            e.preventDefault();    // Prevents the link from navigating
+            e.stopPropagation();   // Prevents the click from bubbling up to the link
             addToCart(product);
         });
-        cardList.appendChild(card);
+
+        cardList.appendChild(cardLink);
     });
 };
 
@@ -233,7 +242,7 @@ options?.forEach(opt => {
     });
 });
 document.addEventListener('click', e => {
-    if (!priceSelector.contains(e.target)) priceSelector.classList.remove('open');
+    if (!priceSelector?.contains(e.target)) priceSelector?.classList.remove('open');
 });
 
 const searchInput = document.getElementById('search');
@@ -255,30 +264,6 @@ function applyFilters() {
     });
     showCards(filtered);
 }
-
-// ===== MODAL =====
-const modal = document.getElementById('foodModal');
-const modalImage = document.getElementById('modalImage');
-const modalName = document.getElementById('modalName');
-const modalPrice = document.getElementById('modalPrice');
-const modalDescription = document.getElementById('modalDescription');
-const modalAddBtn = document.getElementById('addToCartBtn');
-const modalViewBtn = document.getElementById('viewCartBtn');
-const modalClose = document.querySelector('#foodModal .close');
-
-function openFoodModal(product) {
-    modalImage.src = product.image;
-    modalName.textContent = product.name;
-    modalPrice.textContent = `₹${parseFloat(product.price.replace(/[₹$]/g, '')).toFixed(2)}`;
-    modalDescription.textContent = product.description || "No description available.";
-    modal.style.display = 'flex';
-    modalAddBtn.onclick = () => { addToCart(product); modal.style.display = 'none'; };
-    modalViewBtn.onclick = () => { cartTab.classList.add('cart-tab-active'); modal.style.display = 'none'; };
-}
-
-modalClose?.addEventListener('click', () => modal.style.display = 'none');
-window.addEventListener('click', e => { if (e.target === modal) modal.style.display = 'none'; });
-document.addEventListener('keydown', e => { if (e.key === "Escape") modal.style.display = 'none'; });
 
 // ===== INIT APP =====
 fetch('../products.json')
