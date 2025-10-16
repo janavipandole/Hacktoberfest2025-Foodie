@@ -9,22 +9,25 @@
 
     <!-- Font (valid CDN) -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
-    <link rel="stylesheet" href="../CSS/aboutUs.css" />
+
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/aboutUs.css" />
 </head>
 
 <body>
-    <!-- HEADER -->
+
+    <!-- UNIVERSAL NAVBAR -->
     <header>
         <nav class="navbar flex between wrapper">
             <div class="logo">Foodie.</div>
 
             <!-- DESKTOP MENU -->
             <ul class="navList flex gap-3 between">
-                <li><a href="../HTML/index.html">Home</a></li>
-                <li><a href="../HTML/index.html#menu">Menu</a></li>
-                <li><a href="../HTML/index.html#services">Services</a></li>
-                <li><a href="#" class="active">About Us</a></li>
-                <li><a href="../HTML/contactUs.html">Contacts</a></li>
+                <li><a href="./index.html#home">Home</a></li>
+                <li><a href="./index.html#services">Services</a></li>
+                <li><a href="./menu.html">Menu</a></li>
+                <li><a href="./aboutUs.html">About Us</a></li>
+                <li><a href="./contactUs.html">Contacts</a></li>
             </ul>
 
             <div class="desktop-action flex gap-2">
@@ -35,21 +38,28 @@
                     <i class="fa-solid fa-bag-shopping"></i>
                     <span class="cart-value">0</span>
                 </a>
-                <a href="../HTML/signup.html" class="btn">Sign in&nbsp;<i
-                        class="fa-solid fa-arrow-right-from-bracket"></i></a>
+                <a href="./signup.html" class="btn">
+                    Sign in&nbsp;<i class="fa-solid fa-arrow-right-from-bracket"></i>
+                </a>
                 <a href="#" class="hamberger"><i class="fa-solid fa-bars"></i></a>
             </div>
 
             <!-- MOBILE MENU -->
             <ul class="mobile-menu">
-                <li><a href="../HTML/index.html">Home</a></li>
-                <li><a href="../HTML/index.html#menu">Menu</a></li>
-                <li><a href="../HTML/index.html#services">Services</a></li>
-                <li><a href="#" class="active">About Us</a></li>
-                <li><a href="../HTML/contactUs.html">Contacts</a></li>
+                <li><a href="./index.html#home">Home</a></li>
+                <li><a href="./index.html#services">Services</a></li>
+                <li><a href="./index.html#menu">Menu</a></li>
+                <li><a href="./aboutUs.html">About Us</a></li>
+                <li><a href="./contactUs.html">Contacts</a></li>
                 <li>
-                    <a href="../HTML/signup.html" class="btn">Sign in&nbsp;<i
-                            class="fa-solid fa-arrow-right-from-bracket"></i></a>
+                    <button class="theme-toggle mobile-theme-toggle" aria-label="Toggle dark mode">
+                        <i class="fa-solid fa-moon"></i><span>Dark Mode</span>
+                    </button>
+                </li>
+                <li>
+                    <a href="./signup.html" class="btn">
+                        Sign in&nbsp;<i class="fa-solid fa-arrow-right-from-bracket"></i>
+                    </a>
                 </li>
             </ul>
         </nav>
