@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Item Details</title>
+    <link rel="stylesheet" href="../css/style.css"> 
+    <style>
+        /* Add some basic styling for the detail page */
+        .item-detail-container {
+            max-width: 800px;
+            margin: 40px auto;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+        .item-main {
+            display: flex;
+            gap: 30px;
+        }
+        .item-main img {
+            max-width: 300px;
+            border-radius: 8px;
+        }
+        .item-info h1 {
+            margin-top: 0;
+        }
+        .add-to-cart-btn {
+            padding: 10px 20px;
+            background-color: #ff6347; /* Or your theme color */
+            color: white;
+            border: none;
+            cursor: pointer;
+            font-size: 16px;
+            border-radius: 5px;
+        }
+        .recommended-section {
+            margin-top: 40px;
+        }
+        .recommended-items {
+            display: flex;
+            justify-content: space-between;
+            gap: 15px;
+        }
+        .recommended-item {
+            border: 1px solid #ddd;
+            padding: 10px;
+            text-align: center;
+            border-radius: 5px;
+        }
+        .recommended-item img {
+            max-width: 100px;
+        }
+        .recommended-item a {
+            text-decoration: none;
+            color: inherit;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="item-detail-container">
+        <div class="item-main">
+            <img id="item-image" src="" alt="Food item image">
+            <div class="item-info">
+                <h1 id="item-title"></h1>
+                <p id="item-price" style="font-size: 1.5rem; font-weight: bold;"></p>
+                <p id="item-description"></p>
+                <button id="add-to-cart-btn" class="add-to-cart-btn">Add to Cart</button>
+            </div>
+        </div>
+
+        <div class="recommended-section">
+            <h2>You might also like...</h2>
+            <hr>
+            <div id="recommended-items" class="recommended-items">
+                </div>
+        </div>
+    </div>
+
+    <script src="../js/item-detail.js"></script>
+</body>
+</html>
