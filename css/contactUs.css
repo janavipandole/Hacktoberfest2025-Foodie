@@ -227,44 +227,6 @@ select:focus {
     }
 }
 
-
-/* Footer */
-footer {
-    background: var(--bg-secondary);
-    margin-top: 100px;
-    border-top: 1px solid var(--border-color);
-    transition: all 0.3s ease;
-}
-
-/* Back to Top */
-.back-to-top {
-    position: fixed;
-    bottom: 30px;
-    right: 30px;
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 20px;
-    opacity: 0;
-    visibility: hidden;
-    background: var(--accent-primary);
-    color: var(--bg-secondary);
-    transition: all 0.3s ease;
-}
-
-.back-to-top.visible {
-    opacity: 1;
-    visibility: visible;
-}
-
-.back-to-top:hover {
-    background: var(--accent-secondary);
-    transform: translateY(-5px);
-}
-
 /* Responsive */
 @media (max-width: 1024px) {
 
