@@ -113,6 +113,7 @@ body {
     border-radius: 25px;
     font-weight: 600;
     transition: all 0.3s ease;
+    margin-top: 20px;
 }
 
 .sign-in-btn:hover,
@@ -126,6 +127,7 @@ body {
     background: var(--bg-secondary);
     padding: 80px 40px;
     text-align: center;
+    padding-top: 200px;
 }
 
 .hero h1 {
@@ -187,6 +189,7 @@ body {
     border-radius: 12px;
     padding: 2rem;
     box-shadow: 0 4px 12px var(--shadow);
+    padding: 50px;
 }
 
 .submit-btn {
@@ -425,4 +428,7 @@ footer {
     .hero h1 {
         font-size: 32px;
     }
+}
+.form-row {
+    padding: 20px;
 }
