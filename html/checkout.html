@@ -25,7 +25,7 @@
   <!-- UNIVERSAL NAVBAR -->
   <header>
     <nav class="navbar flex between wrapper">
-      <div class="logo">Foodie.</div>
+      <a class="logo" href="./index.html#home"> Foodie.</a>
 
       <!-- DESKTOP MENU -->
       <ul class="navList flex gap-3 between">
@@ -315,12 +315,12 @@
     });
 
     // Mobile Menu Toggle
-    const hamburger = document.querySelector(".hamberger");
-    const mobileMenu = document.querySelector(".mobile-menu");
+    const checkoutHamburger = document.querySelector(".hamberger");
+    const checkoutMobileMenu = document.querySelector(".mobile-menu");
 
-    hamburger.addEventListener("click", (e) => {
+    checkoutHamburger.addEventListener("click", (e) => {
       e.preventDefault();
-      mobileMenu.classList.toggle("mobile-menu-active");
+      checkoutMobileMenu.classList.toggle("mobile-menu-active");
     });
 
     document.addEventListener("DOMContentLoaded", () => {
@@ -339,9 +339,11 @@
 
     function displayOrderItems() {
       const container = document.getElementById("orderItems");
+      
       container.innerHTML = cartData
         .map(
-          (item) => `
+          (item) => 
+          `
                 <div class="order-item">
                     <img src="${item.image}" alt="${item.name}">
                     <div class="order-item-details">

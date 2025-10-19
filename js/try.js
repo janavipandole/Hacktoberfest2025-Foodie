@@ -1,5 +1,5 @@
 // ===== SWIPER =====
-var swiper = new Swiper(".swiper-mySwiper", {
+var swiper = new Swiper(".mySwiper", {
     loop: true,
     navigation: {
         nextEl: ".fa-arrow-right",
@@ -155,9 +155,6 @@ const updateTotalPrice = () => {
 
 // ===== UPDATE CARD BUTTON STATE =====
 const updateCardButton = (card, product) => {
-    /*product.quantity++;*/
-    /*sessionStorage.setItem('checkoutCart', JSON.stringify(addProduct));*/
-    const qty = card.querySelector('.qty-display');
     const existProduct = addProduct.find(item => item.id === product.id);
     const buttonContainer = card.querySelector('.card-btn-container');
     
@@ -193,7 +190,7 @@ const updateCardButton = (card, product) => {
     } else {
         // Show "Add to Cart" button
         buttonContainer.innerHTML = `
-            <a href="./checkout.html" class="btn card-btn">Add to Cart</a>
+            <a href="#" class="btn card-btn">Add to Cart</a>
         `;
         
         buttonContainer.querySelector('.card-btn').addEventListener('click', e => {
@@ -210,7 +207,8 @@ const increaseQuantity = (product, card) => {
     let existProduct = addProduct.find(item => item.id === product.id);
     
     if (existProduct) {
-        existProduct.quantity++;        
+        existProduct.quantity++;
+        
         // Update cart item
         const cartItem = [...cartList.querySelectorAll('.item')]
             .find(item => item.querySelector('.detail h4').textContent === product.name);
@@ -323,10 +321,7 @@ const addToCart = (product, card) => {
     });
     
     // Update the card button to show quantity selector
-    /*sessionStorage.setItem('checkoutCart', JSON.stringify(addProduct));*/
-    addProduct.push(product);
     updateCardButton(card, product);
-    
 };
 
 // ===== CHECKOUT =====
@@ -343,10 +338,8 @@ checkoutBtn?.addEventListener('click', e => {
         quantity: product.quantity
     }));
 
-
     sessionStorage.setItem('checkoutCart', JSON.stringify(checkoutData));
-    window.location.href = './checkout.html';
-    /*window.location.href = '../HTML/checkout.html';*/
+    window.location.href = '../HTML/checkout.html';
 });
 
 // ===== RENDER PRODUCT CARDS =====
@@ -374,7 +367,6 @@ const showCards = list => {
             <h4 class="price">₹${parseFloat(product.price.replace(/[₹$]/g, '')).toFixed(2)}</h4>
             <div class="card-btn-container"></div>
         `;
-    
         
         // Initialize button state
         updateCardButton(card, product);
@@ -559,121 +551,3 @@ const loadProducts = async (retryCount = 0) => {
 };
 
 loadProducts();
-
-// ===== CART FUNCTIONALITY ADD-ON =====
-
-// Add product to cart (or increase quantity if already added)
-function addProductToCart(product) {
-    console.log('Adding product to cart:', product);
-    let cartItem = addProduct.find(item => item.id === product.id);
-    console.log('Existing cart item:', cartItem);
-
-    if (cartItem) {
-        cartItem.quantity++;
-        updateCartItemUI(cartItem);
-        showToast(`Added another ${product.name} to cart`);
-    } else {
-        product.quantity = 1;
-        addProduct.push(product);
-        createCartItemUI(product);
-        showToast(`${product.name} added to cart`);
-    }
-    updateCartTotal();
-}
-
-// Create a cart item element in the cart tab
-function createCartItemUI(product) {
-    const price = parseFloat(product.price.replace(/[₹$]/g, ''));
-    const cartItem = document.createElement('div');
-    cartItem.classList.add('item');
-    cartItem.setAttribute('data-id', product.id);
-    cartItem.innerHTML = `
-        <div class="images-container"><img src="${product.image}"></div>
-        <div class="detail">
-            <h4>${product.name}</h4>
-            <h4 class="item-total">₹${price.toFixed(2)}</h4>
-        </div>
-        <div class="flex">
-            <a href="#" class="quantity-btn minus"><i class="fa-solid fa-minus"></i></a>
-            <h4 class="quantity-value">${product.quantity}</h4>
-            <a href="#" class="quantity-btn plus"><i class="fa-solid fa-plus"></i></a>
-        </div>
-    `;
-    cartList.appendChild(cartItem);
-    console.log('Created cart item UI for product:', cartList);
-
-    // Event listeners for + / - buttons
-    const plusBtn = cartItem.querySelector('.plus');
-    const minusBtn = cartItem.querySelector('.minus');
-    const quantityValue = cartItem.querySelector('.quantity-value');
-    const itemTotal = cartItem.querySelector('.item-total');
-
-    plusBtn.addEventListener('click', e => {
-        e.preventDefault();
-        product.quantity++;
-        quantityValue.textContent = product.quantity;
-        itemTotal.textContent = `₹${(price * product.quantity).toFixed(2)}`;
-        updateCartTotal();
-        updateCardButtonByProduct(product);
-    });
-
-    minusBtn.addEventListener('click', e => {
-        e.preventDefault();
-        if (product.quantity > 1) {
-            product.quantity--;
-            quantityValue.textContent = product.quantity;
-            itemTotal.textContent = `₹${(price * product.quantity).toFixed(2)}`;
-        } else {
-            cartItem.remove();
-            addProduct = addProduct.filter(item => item.id !== product.id);
-        }
-        updateCartTotal();
-        updateCardButtonByProduct(product);
-    });
-}
-
-// Update cart item UI (quantity / total)
-function updateCartItemUI(product) {
-    const cartItem = [...cartList.querySelectorAll('.item')]
-        .find(item => item.querySelector('.detail h4').textContent === product.name);
-    if (!cartItem) return;
-    const quantityValue = cartItem.querySelector('.quantity-value');
-    const itemTotal = cartItem.querySelector('.item-total');
-    const price = parseFloat(product.price.replace(/[₹$]/g, ''));
-    quantityValue.textContent = product.quantity;
-    itemTotal.textContent = `₹${(product.quantity * price).toFixed(2)}`;
-}
-
-// Update cart total and cart icon count
-function updateCartTotal() {
-    let totalAmount = 0;
-    let totalItems = 0;
-    addProduct.forEach(item => {
-        const price = parseFloat(item.price.replace(/[₹$]/g, ''));
-        totalAmount += price * item.quantity;
-        totalItems += item.quantity;
-    });
-    cartTotal.textContent = `₹${totalAmount.toFixed(2)}`;
-    cartValue.textContent = totalItems;
-}
-
-// Update the quantity selector on menu card if product is already in cart
-function updateCardButtonByProduct(product) {
-    const card = [...cardList.querySelectorAll('.order-card')]
-        .find(c => c.querySelector('h4').textContent === product.name);
-    if (card) updateCardButton(card, product); // Uses existing updateCardButton function
-    addProductToCart(product);
-}
-
-// Add all products in addProduct array to cart when cart opens
-cartIcon?.addEventListener('click', () => {
-    addProduct.forEach(p => {
-        const exists = [...cartList.querySelectorAll('.item')]
-            .some(item => item.querySelector('.detail h4').textContent === p.name);
-        if (!exists) createCartItemUI(p);
-    });
-    updateCartTotal();
-    addProductToCart(product);
-});
-
-
