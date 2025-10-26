@@ -243,7 +243,7 @@ header .navbar.wrapper {
 }
 
 .navbar {
-    height: 14vh;
+    height: 10vh;
     width: 100%;
     display: flex;
     align-items: center;
