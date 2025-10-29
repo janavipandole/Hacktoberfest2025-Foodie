@@ -221,7 +221,15 @@
     <!-- Back to Top Button -->
     <a href="#" class="back-to-top" aria-label="Back to top"><i class="fa-solid fa-arrow-up"></i></a>
 
-    <script src="../js/cursor.js"></script>
-</body>
+        <!-- Back to Top Button -->
+    <a href="#" class="back-to-top" aria-label="Back to top"><i class="fa-solid fa-arrow-up"></i></a>
 
+    <!-- Add these two AOS lines BEFORE cursor.js -->
+    <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+    <script>
+      AOS.init({ duration: 1000, easing: 'ease-out', once: true });
+    </script>
+
+    <script src="../js/cursor.js"></script>
+    </body>
 </html>
