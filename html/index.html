@@ -45,39 +45,35 @@
                 <li><a href="./contactUs.html">Contact Us</a></li>
                 <li><a href="nearbyres.html">Nearby Restaurants</a></li>
             </ul>
-<div class="desktop-action flex gap-2">
-    <!-- Search Input -->
-    <form class="navbar-search" action="#" method="get">
-    <input 
-        type="text" 
-        name="search" 
-        id="navbar-search"
-        placeholder="Search your food ..." 
-        aria-label="Search menu items">
-    <button type="submit" id="navbar-search-btn" aria-label="Search">
-        <i class="fa-solid fa-magnifying-glass"></i>
-    </button>
-</form>
+            <div class="desktop-action flex gap-2">
+                <!-- Search Input -->
+                <form class="navbar-search" action="#" method="get">
+                    <input type="text" name="search" id="navbar-search" placeholder="Search your food ..."
+                        aria-label="Search menu items">
+                    <button type="submit" id="navbar-search-btn" aria-label="Search">
+                        <i class="fa-solid fa-magnifying-glass"></i>
+                    </button>
+                </form>
 
-    <!-- Theme toggle -->
-    <button class="desktop-action theme-toggle" aria-label="Toggle dark mode">
-        <i class="fa-solid fa-moon"></i>
-    </button>
+                <!-- Theme toggle -->
+                <button class="desktop-action theme-toggle" aria-label="Toggle dark mode">
+                    <i class="fa-solid fa-moon"></i>
+                </button>
 
-    <!-- Cart Icon -->
-    <a href="./checkout.html" class="cart-icon">
-        <i class="fa-solid fa-bag-shopping"></i>
-        <span class="cart-value">0</span>
-    </a>
+                <!-- Cart Icon -->
+                <a href="./checkout.html" class="cart-icon">
+                    <i class="fa-solid fa-bag-shopping"></i>
+                    <span class="cart-value">0</span>
+                </a>
 
-    <!-- Sign-in button -->
-    <a href="./signup.html" class="btn">
-        Sign in&nbsp;<i class="fa-solid fa-arrow-right-from-bracket"></i>
-    </a>
+                <!-- Sign-in button -->
+                <a href="./signup.html" class="btn">
+                    Sign in&nbsp;<i class="fa-solid fa-arrow-right-from-bracket"></i>
+                </a>
 
-    <!-- Hamburger -->
-    <a href="#" class="hamberger"><i class="fa-solid fa-bars"></i></a>
-</div>
+                <!-- Hamburger -->
+                <a href="#" class="hamberger"><i class="fa-solid fa-bars"></i></a>
+            </div>
 
 
             <!-- MOBILE MENU -->
@@ -88,6 +84,14 @@
                 <li><a href="./aboutUs.html">About Us</a></li>
                 <li><a href="./contactUs.html">Contact Us</a></li>
                 <li><a href="nearbyres.html">Nearby Restaurants</a></li>
+                 <!-- Search Input -->
+                <form class="navbar-search" action="#" method="get">
+                    <input type="text" name="search" id="navbar-search" placeholder="Search your food ..."
+                        aria-label="Search menu items">
+                    <button type="submit" id="navbar-search-btn" aria-label="Search">
+                        <i class="fa-solid fa-magnifying-glass"></i>
+                    </button>
+                </form>
                 <li>
                     <button class="theme-toggle mobile-theme-toggle" aria-label="Toggle dark mode">
                         <i class="fa-solid fa-moon"></i><span>Dark Mode</span>
@@ -267,16 +271,11 @@
                         drop you email below to get daily update about us.</p>
 
                     <form id="newsletterForm" class="input-container flex" data-aos="fade-up" data-aos-delay="200">
-    <input 
-        type="email" 
-        name="email" 
-        id="email" 
-        placeholder="Enter your email address"
-        autocomplete="off"
-        required>
-    <button type="submit" class="btn">Subscribe</button>
-</form>
-<span class="error-message" id="emailError"></span>
+                        <input type="email" name="email" id="email" placeholder="Enter your email address"
+                            autocomplete="off" required>
+                        <button type="submit" class="btn">Subscribe</button>
+                    </form>
+                    <span class="error-message" id="emailError"></span>
                 </div>
             </div>
         </section>
@@ -319,7 +318,8 @@
                         <h4>Company</h4>
                     </li>
                     <li class="mt-one"><a href="#" class="footer-link"> Why Foodie</a></li>
-                    <li class="mt-one"><a href="../HTML/PartnerWithUs.html" class="footer-link"> Partner with us</a></li>
+                    <li class="mt-one"><a href="../HTML/PartnerWithUs.html" class="footer-link"> Partner with us</a>
+                    </li>
                     <li class="mt-one"><a href="../HTML/aboutUs.html" class="footer-link"> About us </a></li>
                     <li class="mt-one"><a href="../HTML/contactUs.html" class="footer-link"> FAQ's</a></li>
                 </ul>
@@ -362,14 +362,14 @@
     </script>
 
     <!-- AOS for Animations -->
-     <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
-      <script>
-         AOS.init({
-         duration: 1000,     // Animation duration (1s)
-         easing: 'ease-out', // Smooth easing
-         once: true,         // Animate only once per element
-         offset: 100         // Offset from bottom before trigger
-       });
+    <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            duration: 1000,     // Animation duration (1s)
+            easing: 'ease-out', // Smooth easing
+            once: true,         // Animate only once per element
+            offset: 100         // Offset from bottom before trigger
+        });
     </script>
 
     <script src="../js/newsletter.js"></script>
