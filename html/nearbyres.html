@@ -1,40 +1,86 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Near By Restaurants | Foodie</title>
   <link rel="icon" href="../imgs/favicon.png" type="image/png" />
-<link rel="stylesheet" href="../css/style.css" />
-<link rel="stylesheet" href="../css/cursor.css" />
-<link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet" />
-<script defer src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-<script src="https://kit.fontawesome.com/a2e0e6ad8b.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="../css/style.css" />
+  <link rel="stylesheet" href="../css/cursor.css" />
+  <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet" />
+  <script defer src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css"
+    integrity="sha512-DxV+EoADOkOygM4IR9yXP8Sb2qwgidEmeqAEmDKIOfPRQZOWbXCzLC6vjbZyy0vPisbH2SyW27+ddLVCN+OMzQ=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
+
 <body>
-  <!-- NAVBAR (keep same classes so style remains identical) -->
+  <!-- UNIVERSAL NAVBAR -->
   <header>
     <nav class="navbar flex between wrapper">
       <div class="logo">Foodie.</div>
+
+      <!-- DESKTOP MENU -->
       <ul class="navList flex gap-3 between">
-        <li><a href="./index.html#home">Home</a></li>
+        <li><a class="active" href="./index.html#home">Home</a></li>
         <li><a href="./index.html#services">Services</a></li>
         <li><a href="./menu.html">Menu</a></li>
         <li><a href="./aboutUs.html">About Us</a></li>
         <li><a href="./contactUs.html">Contact Us</a></li>
-        <li><a href="nearbyres.html" class="active">Nearby Restaurants</a></li>
+        <li><a href="nearbyres.html">Nearby Restaurants</a></li>
       </ul>
-
       <div class="desktop-action flex gap-2">
+        <!-- Search Input -->
+        <form class="navbar-search" action="#" method="get">
+          <input type="text" name="search" id="navbar-search" placeholder="Search your food ..."
+            aria-label="Search menu items">
+          <button type="submit" id="navbar-search-btn" aria-label="Search">
+            <i class="fa-solid fa-magnifying-glass"></i>
+          </button>
+        </form>
+
+        <!-- Theme toggle -->
         <button class="desktop-action theme-toggle" aria-label="Toggle dark mode">
           <i class="fa-solid fa-moon"></i>
         </button>
+
+        <!-- Cart Icon -->
         <a href="./checkout.html" class="cart-icon">
           <i class="fa-solid fa-bag-shopping"></i>
           <span class="cart-value">0</span>
         </a>
-        <a href="./signup.html" class="btn">Sign in&nbsp;<i class="fa-solid fa-arrow-right-from-bracket"></i></a>
+
+        <!-- Sign-in button -->
+        <a href="./signup.html" class="btn">
+          Sign in&nbsp;<i class="fa-solid fa-arrow-right-from-bracket"></i>
+        </a>
+
+        <!-- Hamburger -->
+        <a href="#" class="hamberger"><i class="fa-solid fa-bars"></i></a>
       </div>
+
+
+      <!-- MOBILE MENU -->
+      <ul class="mobile-menu">
+        <li><a class="active" href="./index.html#home">Home</a></li>
+        <li><a href="./index.html#services">Services</a></li>
+        <li><a href="./menu.html">Menu</a></li>
+        <li><a href="./aboutUs.html">About Us</a></li>
+        <li><a href="./contactUs.html">Contact Us</a></li>
+        <li><a href="nearbyres.html">Nearby Restaurants</a></li>
+        <li>
+          <button class="theme-toggle mobile-theme-toggle" aria-label="Toggle dark mode">
+            <i class="fa-solid fa-moon"></i><span>Dark Mode</span>
+          </button>
+        </li>
+        <li>
+          <a href="./signup.html" class="btn">
+            Sign in&nbsp;<i class="fa-solid fa-arrow-right-from-bracket"></i>
+          </a>
+        </li>
+      </ul>
     </nav>
   </header>
 
@@ -81,7 +127,7 @@
     </section>
   </main>
 
-  <!-- footer (same structure as index) -->
+  <!-- FOOTER -->
   <footer id="contacts" data-aos="fade-up">
     <div class="footer-container">
       <div class="flex wrapper gap-4">
@@ -89,18 +135,62 @@
           <a href="#" class="logo">Foodie.</a>
           <p class="mt-one">We will fill your tummy with delicious <br>food with fast delivery</p>
           <div class="media flex gap-2 mt-one">
-            <a href="https://github.com/janavipandole" class="social-media"><img src="../imgs/GitHub.png" alt="GitHub"></a>
-            <a href="https://www.linkedin.com/in/janavi-pandole-80a7b2290" class="social-media linkdin"><img src="../imgs/linkdin.png" alt="LinkedIn"></a>
-            <a href="https://www.youtube.com/@JanaviPandole" class="social-media"><img src="../imgs/youtube.png" alt="YouTube"></a>
+            <a href="https://github.com/janavipandole" class="social-media">
+              <img src="../imgs/GitHub.png" alt="GitHub social icon in footer">
+            </a>
+            <a href="https://www.linkedin.com/in/janavi-pandole-80a7b2290" class="social-media linkdin">
+              <img src="../imgs/linkdin.png" alt="LinkedIn social icon in footer">
+            </a>
+            <a href="https://www.youtube.com/@JanaviPandole" class="social-media">
+              <img src="../imgs/youtube.png" alt="YouTube social icon in footer">
+            </a>
+            <a href="https://x.com/JanaviPandole" class="social-media">
+              <img src="../imgs/twitter.png" alt="Twitter social icon in footer">
+            </a>
           </div>
         </div>
+
+        <ul class="footer-wrapper">
+          <li>
+            <h4>Our Menu</h4>
+          </li>
+          <li class="mt-one"><a href="../HTML/index.html" class="footer-link">Special</a></li>
+          <li class="mt-one"><a href="../HTML/index.html" class="footer-link">Popular</a></li>
+          <li class="mt-one"><a href="../HTML/index.html" class="footer-link">Category</a></li>
+        </ul>
+
+        <ul class="footer-wrapper">
+          <li>
+            <h4>Company</h4>
+          </li>
+          <li class="mt-one"><a href="#" class="footer-link"> Why Foodie</a></li>
+          <li class="mt-one"><a href="../HTML/PartnerWithUs.html" class="footer-link"> Partner with us</a></li>
+          <li class="mt-one"><a href="../HTML/aboutUs.html" class="footer-link"> About us </a></li>
+          <li class="mt-one"><a href="../HTML/contactUs.html" class="footer-link"> FAQ's</a></li>
+        </ul>
+
+        <ul class="footer-wrapper">
+          <li>
+            <h4>Support</h4>
+          </li>
+          <li class="mt-one"><a href="../HTML/signup.html" class="footer-link">Account</a></li>
+          <li class="mt-one"><a href="../HTML/supportCenter.html" class="footer-link"> Support center </a>
+          </li>
+          <li class="mt-one"><a href="../HTML/feedback.html" class="footer-link"> Feedback</a></li>
+          <li class="mt-one"><a href="../HTML/contactUs.html" class="footer-link">Contact Us</a></li>
+        </ul>
       </div>
     </div>
   </footer>
+
+  <a href="#home" class="back-to-top" aria-label="Back to top">
+    <i class="fa-solid fa-arrow-up"></i>
+  </a>
 
   <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
   <script src="../js/nearbyres.js" defer></script>
   <script src="../js/cursor.js"></script>
   <script> AOS.init({ duration: 1000, easing: 'ease-out', once: true }); </script>
 </body>
+
 </html>
