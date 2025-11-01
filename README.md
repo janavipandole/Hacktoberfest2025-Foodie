@@ -1,3 +1,4 @@
+<img src="https://github.com/janavipandole/Foodie/blob/main/imgs/burger.png" alt="Logo" width="200" />
 # 🎃 Hacktoberfest 2025
 
 ### 🍽️ **Foodie — Responsive Food Delivery Website**
