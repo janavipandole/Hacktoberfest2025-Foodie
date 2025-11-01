@@ -142,6 +142,12 @@ Whether it’s bug fixes, new features, or improving documentation — every con
 
 <img src="https://github.com/Mayur-Pagote/README_Design_Kit/blob/730d340c8008758ac291ebc555f818f851feda0f/Assets/RGB%20Line%20Thick.gif" width="100%" />
 
+## ❄️ Winter Of Code Social 2025
+This project is excited to be a part of **Winter Of Code Social 2025**!
+Contribute awesome pull requests, learn new technologies, and become a part of the open-source community. 💻✨
+🔥 Whether you’re a beginner or a pro, this is your chance to grow and collaborate with developers around the world.
+👉 **Register here:** [hacktoberfest.com](https://hacktoberfest.com/)
+
 ## 🌱 Hacktoberfest 2025
 
 This project proudly participates in **Hacktoberfest 2025**!
