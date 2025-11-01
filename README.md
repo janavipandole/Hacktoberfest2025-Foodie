@@ -144,7 +144,7 @@ Whether it’s bug fixes, new features, or improving documentation — every con
 
 ## ❄️ Winter Of Code Social 2025
 This project is excited to be a part of **Winter Of Code Social 2025**!
-Contribute awesome pull requests, learn new technologies, and become a part of the open-source community.!
+Contribute awesome pull requests, learn new technologies, and become a part of the open-source community.
 Whether you’re a beginner or a pro, this is your chance to grow and collaborate with developers around the world.
 👉 **Register here:** [woc.codesocial.tech](https://woc.codesocial.tech/)
 
