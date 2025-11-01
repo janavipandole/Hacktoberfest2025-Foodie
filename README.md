@@ -1,4 +1,4 @@
-<img src="https://github.com/janavipandole/Foodie/blob/main/imgs/burger.png" alt="Logo" width="200" />
+![Logo](https://raw.githubusercontent.com/janavipandole/Foodie/main/imgs/logo%20WOSC.svg)
 # 🎃 Hacktoberfest 2025
 
 ### 🍽️ **Foodie — Responsive Food Delivery Website**
