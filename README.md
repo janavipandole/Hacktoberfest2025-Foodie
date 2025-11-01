@@ -47,13 +47,13 @@ Follow these steps to run **Foodie** locally on your system 👇
 ### 1️⃣ Clone the Repository
 
 ```bash
-git clone https://github.com/janavipandole/Hacktoberfest2025-Foodie.git
+git clone https://github.com/janavipandole/Foodie.git
 ```
 
 ### 2️⃣ Navigate into the Project Folder
 
 ```bash
-cd Hacktoberfest2025-Foodie
+cd Foodie
 ```
 
 ### 3️⃣ Open in Your Browser
@@ -108,7 +108,7 @@ Whether it’s bug fixes, new features, or improving documentation — every con
 2. **Clone your forked repo**
 
    ```bash
-   git clone https://github.com/<your-username>/Hacktoberfest2025-Foodie.git
+   git clone https://github.com/<your-username>/Foodie.git
    ```
 
 3. **Create a new branch**
@@ -169,19 +169,19 @@ See the [LICENSE](LICENSE) file for full details.
 
 ## Contributors
 
-<img src="https://contributors-img.web.app/image?repo=janavipandole/Hacktoberfest2025-Foodie"/>
+<img src="https://contributors-img.web.app/image?repo=janavipandole/Foodie"/>
 
 <img src="https://github.com/Mayur-Pagote/README_Design_Kit/blob/45123f007c79aa8d0c8d9b11b3ff72d6bf4744c7/Assets/Star%20Light%20Line.gif" width="100%">
 
 ## Stargazers
 
-<img src="https://reporoster.com/stars/dark/janavipandole/Hacktoberfest2025-Foodie"/>
+<img src="https://reporoster.com/stars/dark/janavipandole/Foodie"/>
 
 <img src="https://github.com/Mayur-Pagote/README_Design_Kit/blob/45123f007c79aa8d0c8d9b11b3ff72d6bf4744c7/Assets/Star%20Light%20Line.gif" width="100%">
 
 ## Forkers
 
-<img src="https://reporoster.com/forks/dark/janavipandole/Hacktoberfest2025-Foodie"/>
+<img src="https://reporoster.com/forks/dark/janavipandole/Foodie"/>
 
 
 <img src="https://capsule-render.vercel.app/api?type=waving&color=gradient"/>
